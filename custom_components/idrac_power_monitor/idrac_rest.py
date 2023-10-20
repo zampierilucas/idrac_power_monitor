@@ -2,6 +2,7 @@ import requests
 from homeassistant.exceptions import HomeAssistantError
 import urllib3
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+requests.packages.urllib3.util.ssl_.DEFAULT_CIPHERS += ':HIGH:!DH:!aNULL'
 
 from .const import (
     JSON_NAME, JSON_MANUFACTURER, JSON_MODEL, JSON_SERIAL_NUMBER,
